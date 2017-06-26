@@ -4,8 +4,13 @@
   "description": "formation nodeJS mission 4",
   "main": "server.js",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "start" : "node server.js"
   },
   "author": "MaelleT",
-  "license": "ISC"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+  
 }

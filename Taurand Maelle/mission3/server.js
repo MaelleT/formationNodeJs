@@ -1,9 +1,4 @@
 const express=require("express");
-const app = express();
-
-app.listen(8081,()=> {
-        console.log('il y a eu une requête !!!!');
-})
 
 const http = require('http');
 
