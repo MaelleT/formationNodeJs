@@ -25,13 +25,11 @@ class Eleve {
 	};
 	/*methode de la classe Eleve*/
 	get prenom() {
-		return this._nom;
+		return this._prenom;
 	};
 
-	
-
-	set prenom(unNom) {
-		this._nom = unNom;
+	set prenom(unPrenom) {
+		this._prenom = unPrenom;
 	};
 
 	ajouterNoteMatiere(valeur,uneMatiere){
