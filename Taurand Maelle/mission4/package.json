@@ -1,0 +1,11 @@
+{
+  "name": "mission4",
+  "version": "1.0.0",
+  "description": "formation nodeJS mission 4",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "MaelleT",
+  "license": "ISC"
+}
