@@ -1,0 +1,11 @@
+{
+  "name": "mission3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serveur.js",
+  "scripts": {
+    "test": "salut"
+  },
+  "author": "manu",
+  "license": "ISC"
+}
