@@ -1,0 +1,15 @@
+{
+  "name": "mission4",
+  "version": "0.0.1",
+  "description": "Premier projet npm",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test",
+    "start": "node server.js"
+  },
+  "author": "Moi-même",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
