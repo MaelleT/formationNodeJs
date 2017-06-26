@@ -43,7 +43,7 @@ Note.prototype.setCours = function(cours){
 	return this._cours.setCours(cours);
 }
 
-Note.prototype.getString = function(){
+Note.prototype.toString = function(){
 	return this._cours.getIntitule() + ' ' + this._valeur + ' ' + this._date;
 }
 
