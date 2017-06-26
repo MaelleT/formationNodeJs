@@ -4,12 +4,16 @@ const Cours = require('./cours.js');
 
 class Eleve {
 	
-	constructor(nom = 'nom',prenom = 'prenom') {
+	constructor(id = 'id', nom = 'nom',prenom = 'prenom') {
+		this._id = id;
 		this._nom = nom;
 		this._prenom = prenom;
 		//console.log('Je m\'appelle ' + this._nom + ' ' + this._prenom);
 		this._mesNotes = [];
 	};
+	get id() {
+		return this._id;
+	}
 
 	/*methode de la classe Eleve*/
 	get nom() {
