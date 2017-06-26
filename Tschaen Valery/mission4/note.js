@@ -1,3 +1,5 @@
+"use strict";
+
 /*
  * Classe Note
  */
@@ -44,7 +46,8 @@ Note.prototype.setCours = function(cours){
 }
 
 Note.prototype.toString = function(){
-	return this._cours.getIntitule() + ' ' + this._valeur + ' ' + this._date;
+    let d = this._date.getDate()+'/'+(this._date.getMonth()+1)+'/'+this._date.getFullYear();
+	return this._cours.getIntitule() + ' ' + this._valeur + ' ' + `(${d})`;
 }
 
 module.exports = Note;

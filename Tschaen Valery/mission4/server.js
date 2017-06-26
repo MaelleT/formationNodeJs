@@ -1,3 +1,5 @@
+"use strict";
+
 const express = require('express');
 const Eleve = require('./eleve');
 const Cours = require('./cours');
@@ -17,11 +19,13 @@ let prof1 = new Prof("Super","Man");
 
 let cours = new Cours("Maths",2,prof1);
 
-eleve1.ajouterNote(12, cours);
-eleve1.ajouterNote(13, cours);
-eleve2.ajouterNote(14, cours);
-eleve2.ajouterNote(15, cours);
-eleve2.ajouterNote(16, cours);
+let d = new Date();
+
+eleve1.ajouterNote(12, cours,d);
+eleve1.ajouterNote(13, cours,d);
+eleve2.ajouterNote(14, cours,d);
+eleve2.ajouterNote(15, cours,d);
+eleve2.ajouterNote(16, cours,d);
 
 
 const app=express();
@@ -65,7 +69,7 @@ app.get("/eleve/:id", (req,res) => {
     res.write('Eleve numero ' + req.params.id + '<br>');
     let eleve = listeEleves[parseInt(req.params.id)-1];
     res.write(eleve.toString());
-    res.write(`<br>Liste des notes : ${eleve.getNotes()}`)
+    res.write(`<br>Liste des notes :<br> ${eleve.getNotes()}`)
     res.write('<hr><a href="/eleves">Retour à la liste des élèves</a>');
     res.end();
 });

@@ -1,3 +1,5 @@
+"use strict";
+
 /*
  * Classe Prof
  */

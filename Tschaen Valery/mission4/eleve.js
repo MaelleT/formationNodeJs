@@ -1,3 +1,5 @@
+"use strict";
+
 const Note=require('./note.js');
 const Cours=require('./cours.js');
 
@@ -57,15 +59,15 @@ class Eleve {
 	};
 
 
-	ajouterNote(valeur, cours){
-		let note = new Note(valeur,cours);
+	ajouterNote(valeur, cours, date){
+		let note = new Note(valeur,cours,date);
 		return this._notes.push(note);
 	};
 
 	getNotes(){
 		let res="";
 		this._notes.forEach(function(note) {
-			res+=note+' ';
+			res+=note+'<br>';
 		});
 		return res;
 	}
