@@ -1,12 +1,20 @@
 const express = require('express');
 const app = express();
- 
+
+const Eleve = require("./eleve.js");
+var unEleve = new Eleve(nom='toto',prenom='titi');
+
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
- 
-app.get('/eleve', (req, res) => {
-  res.send('Hello Eleve');
+
+
+
+app.get('/eleve/:id', (req, res) => {
+  let id=req.params.id;
+  if (id == 1) {
+    res.send('Hello Eleve ' + unEleve.nom);
+  }
 });
 
 try {
