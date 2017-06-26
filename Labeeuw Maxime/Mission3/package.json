@@ -1,0 +1,14 @@
+{
+  "name": "mission4",
+  "version": "1.0.0",
+  "description": "mission4 formation node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Moi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
