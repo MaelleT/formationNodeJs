@@ -19,8 +19,14 @@ eleve.ajouterNote(note);
 note = new Note(50,"27-06-2017",mat);
 eleve.ajouterNote(note);
 app.get("/",(req,res)=>{
-    let str = res.write(eleve.nom);
+    //let str = res.write(eleve.nom);
+    let str="<HTML><HEAD></HEAD><BODY><FORM method=post>nom<INPUT type='text' name ='newName'/><INPUT type='submit' name='valider'/></BODY></FORM></HTML>";
     res.send(str);
+})
+
+app.post("/",(req,res)=>{
+
+    res.send(req);
 })
 
 app.listen(3000,()=>{
