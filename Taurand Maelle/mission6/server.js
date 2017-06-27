@@ -1,9 +1,8 @@
 //modules node
 const express = require('express');
+//const redirect = require('express-redirect');
 
 const bodyParser = require('body-parser');
-
-
 
 
 //modules "métiers"
@@ -11,6 +10,10 @@ const Eleve = require("./eleve.js");
 
 //initialisation de l'application
 const app = express();
+//redirect(app);
+
+app.set('views','./views');
+app.set('view engine','pug');
 
 //ajouter pour le post
 app.use(bodyParser.json()); // support json encoded bodies
@@ -27,8 +30,8 @@ mesEleves.push(unEleve2);
 
 
 app.get('/', (req, res) => {
-  let responseText = 'Bienvenue dans l\'application de gestion des élèves';
-  res.send(responseText);
+  res.render('index', {message : "Bienvenue dans l'application de gestion des élèves" });
+  
 });
 
 //affiche tous les élèves
@@ -58,16 +61,24 @@ app.get('/eleve/:id', (req, res) => {
   }
 });
 
+//
+app.get('/eleve',(req,res) => {
+
+  res.render('eleve');
+
+ 
+});
 
 //Ajoute un eleve
 app.post('/eleve', (req, res) => {
-  let eleve_nom = req.body.nom;
-  let eleve_prenom = req.body.prenom;
  
-  console.log(eleve_nom);
-  mesEleves.push(new Eleve(id=mesEleves.length+1, nom=eleve_nom, prenom=eleve_prenom));
-  let responseText = "Eleve ajouté";
-  res.send(responseText);
+  let eleve = new Eleve(id=mesEleves.length+1, nom=req.body.nom, prenom= req.body.prenom);
+  mesEleves.push(eleve);
+  
+  res.render('eleve',{eleve : eleve });
+
+  
+  
        
 });
 

@@ -1,9 +1,8 @@
 //modules node
 const express = require('express');
+//const redirect = require('express-redirect');
 
 const bodyParser = require('body-parser');
-
-
 
 
 //modules "métiers"
@@ -11,6 +10,10 @@ const Eleve = require("./eleve.js");
 
 //initialisation de l'application
 const app = express();
+//redirect(app);
+
+app.set('views','./views');
+app.set('view engine','pug');
 
 //ajouter pour le post
 app.use(bodyParser.json()); // support json encoded bodies
@@ -27,47 +30,62 @@ mesEleves.push(unEleve2);
 
 
 app.get('/', (req, res) => {
-  let responseText = 'Bienvenue dans l\'application de gestion des élèves';
-  res.send(responseText);
+  res.render('index', {message : "Bienvenue dans l'application de gestion des élèves" });
+  
 });
 
 //affiche tous les élèves
 app.get('/eleves',(req,res) =>  {
-      let responseText = 'Voici la liste des élèves </br>';
+      /*let responseText = 'Voici la liste des élèves </br>';
       mesEleves.forEach(
       (unEleve) => {responseText += `Elève ${unEleve.prenom} ${unEleve.nom}  </br>`;}
 	  	);
         res.send(responseText);
+      */
+      res.render('eleves',{lesEleves : mesEleves });
+
 
   
 });
 
 //affiche un élève
 app.get('/eleve/:id', (req, res) => {
+
+  
   let id=req.params.id;
   let trouve = false;
 
-  if (id < mesEleves.length+1){
-    let responseText = `Hello Eleve ${mesEleves[id-1].nom}`;
-    res.send(responseText);
+   if (id < mesEleves.length+1){
+    //let responseText = `Hello Eleve ${mesEleves[id-1].nom}`;
+    //res.send(responseText);
+    res.render('eleve_detail',{eleve : mesEleves[id-1]});
 
   }	
   else 
   {
-    res.status(404).send("Sorry ! User doesn't exist");
+    res.render('404', { status: 404, url: req.url });
+    //res.status(404).send("Sorry ! User doesn't exist");
   }
 });
 
+//
+app.get('/eleve',(req,res) => {
+
+  res.render('eleve');
+
+ 
+});
 
 //Ajoute un eleve
 app.post('/eleve', (req, res) => {
-  let eleve_nom = req.body.nom;
-  let eleve_prenom = req.body.prenom;
  
-  console.log(eleve_nom);
-  mesEleves.push(new Eleve(id=mesEleves.length+1, nom=eleve_nom, prenom=eleve_prenom));
-  let responseText = "Eleve ajouté";
-  res.send(responseText);
+  let eleve = new Eleve(id=mesEleves.length+1, nom=req.body.nom, prenom= req.body.prenom);
+  mesEleves.push(eleve);
+  
+  res.render('eleve',{eleve : eleve });
+
+  
+  
        
 });
 

@@ -58,6 +58,9 @@ class Eleve {
 		this._prenom = prenom;
 	};
 
+	get notes(){
+		return this._notes;
+	};
 
 	ajouterNote(valeur, cours, date){
 		let note = new Note(valeur,cours,date);

@@ -1,0 +1,23 @@
+html
+    doctype html
+    head
+        title Ajout d'un élève
+    
+    body
+        p 
+            if eleve 
+                p= "Elève " + eleve.prenom + " " + eleve.nom + " ajouté"
+
+            h1 Formulaire d'ajout d'un elève
+            form(action='/eleve' method='post')
+                label Nom
+                input(type="text" name="nom" value="Mickey")
+                br
+                label Prenom
+                input(type="text" name="prenom" value="Mickey")
+                br
+                input(type="submit" value="Envoyer")
+            
+                
+
+        a(href='/') Accueil

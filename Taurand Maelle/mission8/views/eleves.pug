@@ -1,0 +1,13 @@
+html
+    doctype html
+    head
+        title Ajout d'un élève
+    
+    body
+        h1 Liste des élèves 
+        ul
+            each unEleve in lesEleves
+                li= unEleve.prenom + " " + unEleve.nom
+
+        
+        a(href='/eleve') Ajouter un élève

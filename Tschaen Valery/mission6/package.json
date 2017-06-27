@@ -1,17 +1,17 @@
 {
-  "name": "mission4",
-  "version": "1.0.0",
-  "description": "formation nodeJS mission 4",
+  "name": "mission6",
+  "version": "0.1.0",
+  "description": "Premier projet npm",
   "main": "server.js",
   "scripts": {
     "test": "node test",
     "start": "node server.js"
   },
-  "author": "MaelleT",
+  "author": "Moi-même",
   "license": "UNLICENSED",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express-redirect": "^1.2.2"
+    "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {
     "express": "^4.15.3"

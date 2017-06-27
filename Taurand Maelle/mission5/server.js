@@ -1,5 +1,6 @@
 //modules node
 const express = require('express');
+//const redirect = require('express-redirect');
 
 const bodyParser = require('body-parser');
 
@@ -11,6 +12,7 @@ const Eleve = require("./eleve.js");
 
 //initialisation de l'application
 const app = express();
+//redirect(app);
 
 //ajouter pour le post
 app.use(bodyParser.json()); // support json encoded bodies
@@ -58,6 +60,19 @@ app.get('/eleve/:id', (req, res) => {
   }
 });
 
+//
+app.get('/eleve',(req,res) => {
+
+  let responseText = '<form action="/eleve" method="post">';
+  responseText += 'Nom :<br>';
+  responseText += '<input type="text" name="nom" value="Mickey"><br>';
+  responseText += 'Prenom:<br>';
+  responseText += '<input type="text" name="prenom" value="Mouse"><br><br>';
+  responseText += '<input type="submit" value="Envoyer">';
+  responseText += '</form>';
+  res.send(responseText);
+ 
+});
 
 //Ajoute un eleve
 app.post('/eleve', (req, res) => {
@@ -68,6 +83,7 @@ app.post('/eleve', (req, res) => {
   mesEleves.push(new Eleve(id=mesEleves.length+1, nom=eleve_nom, prenom=eleve_prenom));
   let responseText = "Eleve ajouté";
   res.send(responseText);
+  //app.redirect('/eleves');
        
 });
 

@@ -1,0 +1,13 @@
+doctype html
+html
+    include head.pug
+    body
+        ul
+            for eleve in listeEleves
+                //li= eleve
+                li 
+                    a(href="/eleve/"+ eleve.id)= eleve
+
+        a(href='/eleve/') Créer un élève
+
+        include footer.pug

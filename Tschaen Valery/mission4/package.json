@@ -9,7 +9,8 @@
   },
   "author": "Moi-même",
   "license": "UNLICENSED",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "express": "^4.15.3"
   }
 }

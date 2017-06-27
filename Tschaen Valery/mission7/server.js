@@ -1,6 +1,8 @@
 "use strict";
 
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const Eleve = require('./eleve');
 const Cours = require('./cours');
 const Prof = require('./prof');
@@ -9,15 +11,15 @@ const Note = require('./note');
 
 let listeEleves = new Array();
 
-let eleve1 = new Eleve(1,"Boissonnot","Evan");
-let eleve2 = new Eleve(2,"Taurand","Maelle");
+let id=1;
+
+let eleve1 = new Eleve(id++,"Boissonnot","Evan");
+let eleve2 = new Eleve(id++,"Taurand","Maelle");
 
 listeEleves.push(eleve1);
 listeEleves.push(eleve2);
 
-let prof1 = new Prof("Super","Man");
-
-let cours = new Cours("Maths",2,prof1);
+let cours = new Cours("Maths",2,new Prof("Super","Man"));
 
 let d = new Date();
 
@@ -30,19 +32,19 @@ eleve2.ajouterNote(16, cours,d);
 
 const app=express();
 
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded()); // to support URL-encoded bodies
+
+app.set('views','./views');
+app.set('view engine','pug');
+
 app.listen(80,"127.0.0.1",() => {
     console.log("Serveur OK");
 });
 
 app.get("/", (req,res) => {
     console.log("Nouvelle requete");
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.statusCode = 200;
-    res.write("<H1>Bienvenue sur la page d'accueil</H1><BR><hr>");
-    res.write('<a href="/eleves">Liste des élèves</a><br>');
-    res.write('<a href="continuer">continuer</a>');
-
-    res.end();
+    res.render('index');
 });
 
 app.get("/continuer", (req,res) => {
@@ -54,13 +56,7 @@ app.get("/continuer", (req,res) => {
 });
 
 app.get("/eleves/", (req,res) => {
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.statusCode = 200;
-    res.write('<H1>Liste des élèves</H1><HR>');
-    listeEleves.forEach(
-        (eleve) => {res.write('<a href="/eleve/'+ eleve.id +'">'+ eleve.toString()+'</a><br>');}
-    );
-    res.end();
+    res.render('eleves',{listeEleves: listeEleves});
 });
 
 app.get("/eleve/:id", (req,res) => {
@@ -72,4 +68,20 @@ app.get("/eleve/:id", (req,res) => {
     res.write(`<br>Liste des notes :<br> ${eleve.getNotes()}`)
     res.write('<hr><a href="/eleves">Retour à la liste des élèves</a>');
     res.end();
+});
+
+app.get("/eleve", (req,res) => {
+    res.render('ajoutEleve');
+});
+
+app.post("/eleve", (req,res) => {
+    let prenom = req.body.prenom;
+    let nom = req.body.nom;
+
+    let eleve = new Eleve(id++,nom,prenom);
+    
+    listeEleves.push(eleve);
+
+    res.render('ajoutEleve',{eleve: eleve});
+
 });
