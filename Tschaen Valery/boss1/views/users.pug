@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p Liste des élèves
+
+  ul
+    for eleve in eleves
+        li= eleve.Nom + ' ' + eleve.Prenom
