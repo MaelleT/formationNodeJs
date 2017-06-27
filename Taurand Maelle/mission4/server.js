@@ -60,7 +60,6 @@ app.get('/eleve/:id', (req, res) => {
 
 
 //Ajoute un eleve
-
 app.post('/eleve', (req, res) => {
   let eleve_nom = req.body.nom;
   let eleve_prenom = req.body.prenom;

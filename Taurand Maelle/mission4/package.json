@@ -11,6 +11,9 @@
   "license": "UNLICENSED",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "express-redirect": "^1.2.2"
+  },
+  "devDependencies": {
     "express": "^4.15.3"
   }
 }
