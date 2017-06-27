@@ -24,10 +24,10 @@ app.get('/', function (req, res) {
 })
 
 app.get('/eleve', function (req, res) {
-
-  res.send ('<h1> Nom : ' + eleve1.nom +  ' Prenom : ' + eleve1.prenom  + '<H1>') ;
-  /*res.write ('<h1> Notes : ' + eleve1.notes[1] + '' + eleve1.notes[2] + '' + eleve1.notes[3] + '' + eleve1.notes[4] +'<H1>') ;
-  res.send ('<h1> Moyenne Generale : ' + eleve1.moyennegenerale +'<H1>') ; */
-})
+  let moyenne = eleve1.moyenneGenerale().toString()
+  let chaine = '<h1> Nom : ' + eleve1.nom +  ' Prenom : ' + eleve1.prenom  + '<H1>' + '<h1> Moyenne Generale : ' + moyenne +'<H1>'
+  res.send (chaine) ;
+  })
  
+
 app.listen(3000,'127.0.0.1')

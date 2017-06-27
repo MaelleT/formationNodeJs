@@ -12,7 +12,8 @@
   ],
   "author": "delamare",
   "license": "UNLICENCED",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "express": "^4.15.3"
   }
 }
