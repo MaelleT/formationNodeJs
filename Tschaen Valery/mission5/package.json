@@ -1,0 +1,18 @@
+{
+  "name": "mission5",
+  "version": "0.1.0",
+  "description": "Premier projet npm",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test",
+    "start": "node server.js"
+  },
+  "author": "Moi-même",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.17.2"
+  },
+  "devDependencies": {
+    "express": "^4.15.3"
+  }
+}
