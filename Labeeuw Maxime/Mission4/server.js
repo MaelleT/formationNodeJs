@@ -6,11 +6,8 @@ let eleve1 = new Eleve("LABEEUW","Maxime")
 
 app.get("/", (req,res)=>{
     res.write("Coucou");
-   
     res.write(eleve1.nom);
-
     res.write(eleve1.prenom);
-    
     res.end("fin");
 });
 
