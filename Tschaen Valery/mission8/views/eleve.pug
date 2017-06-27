@@ -1,0 +1,13 @@
+doctype html
+html
+    include head.pug
+    body
+        p.eleve= "Elève numéro " + eleve.id + " : " + eleve
+        ul
+            for note in eleve.notes
+                li= note
+        
+        hr
+        a(href='/eleves') Retour à la liste des élèves
+
+        include footer.pug

@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title "Ajout d'un élève"
+    body
+        h1 Création d'un nouvel élève
+        form(method="post" action="/eleve")
+            p
+                label Prénom : 
+                input(type="text" name="prenom")
+                br
+                label Nom : 
+                input(type="text" name="nom")
+                br
+                input(type="submit")

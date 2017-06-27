@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Ajout d'un élève
+        style(type='text/css').
+            .rouge {
+                color: white;
+                background-color: red;
+            }
+    body
+        if eleve
+            p.rouge= "Elève " + eleve + " créé"
+
+        h1 Création d'un nouvel élève
+        form(method="post" action="/eleve")
+            p
+                label Prénom : 
+                input(type="text" name="prenom")
+                br
+                label Nom : 
+                input(type="text" name="nom")
+                br
+                input(type="submit")
+        
+        p
+            a(href='/eleves/') Liste des élèves
