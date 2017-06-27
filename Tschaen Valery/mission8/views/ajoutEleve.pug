@@ -1,0 +1,26 @@
+doctype html
+html
+    include head.pug
+    body
+        mixin formulaire
+            form(method="post" action="/eleve")
+                p
+                    label Prénom : 
+                    input(type="text" name="prenom")
+                    br
+                    label Nom : 
+                    input(type="text" name="nom")
+                    br
+                    input(type="submit")
+
+        if eleve
+            p.rouge= "Elève " + eleve + " créé"
+
+        h1 Création d'un nouvel élève
+
+        +formulaire
+
+        p
+            a(href='/eleves/') Liste des élèves
+        
+        include footer.pug

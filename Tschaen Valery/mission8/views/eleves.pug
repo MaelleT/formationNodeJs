@@ -1,7 +1,6 @@
 doctype html
 html
-    head
-        title Liste des élèves
+    include head.pug
     body
         ul
             for eleve in listeEleves
@@ -10,3 +9,5 @@ html
                     a(href="/eleve/"+ eleve.id)= eleve
 
         a(href='/eleve/') Créer un élève
+
+        include footer.pug
