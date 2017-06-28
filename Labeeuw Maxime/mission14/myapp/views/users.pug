@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  label Liste des élèves de la base :
+  br
+  each val in Reponse
+    label= val.Nom
+    label= val.Prenom
+    br
