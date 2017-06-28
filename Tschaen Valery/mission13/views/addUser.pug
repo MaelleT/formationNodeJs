@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  form(method='post')
+    label Nom
+    br
+    input(type='text' name='nom')
+    br
+    label Prénom
+    br
+    input(type='text' name='prenom')
+    br
+    br
+    input(type='submit')

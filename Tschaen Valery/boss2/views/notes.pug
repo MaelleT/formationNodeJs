@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p Liste des notes
+
+  ul
+    for note in notes
+        li= note.Nom + ' ' + note.Prenom + ' ' + note.Libelle + ' ' + note.Valeur
