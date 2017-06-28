@@ -1,0 +1,14 @@
+{
+    "notes":{
+        "database":{
+            "host": "192.168.222.86",
+            "user": "etudiant",
+            "password": "Password1",
+            "name": "NodeJS",
+            "salut":"salut"
+        },
+        "server":{
+            "port": 4000
+        }
+    }
+}

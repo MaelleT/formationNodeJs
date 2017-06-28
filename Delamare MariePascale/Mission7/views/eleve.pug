@@ -1,0 +1,23 @@
+doctype html
+html
+    body
+        if typeof(eleve) != "undefined"
+            label Eleve cree&nbsp
+            label= "Nom : " + eleve.nom + ' '
+            label= "Prenom : " + eleve.prenom + ' '
+            br
+            br
+            br
+        a(href='eleve') Eleve mise à jour
+        br
+        br 
+        form(action='/eleve' method='post')
+            label NOM&nbsp;
+            input(name='Nom' value='Mickey')
+            br 
+            br
+            label PRENOM&nbsp;
+            input(name='Prenom' value='Mouse')
+            br 
+            br
+            input(type ='submit' value = 'Submit')   

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    ul
+    each eleve in lesNotesDesEleves
+        li= eleve.Nom + " " + eleve.Prenom + " " + eleve.Libelle + " " + eleve.Valeur
+    else
+        li There are no values

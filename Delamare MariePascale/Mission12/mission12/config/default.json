@@ -1,0 +1,14 @@
+{
+    "notes":{
+        "database":{
+            "host":"192.168.5.2",
+            "user":"user",
+            "password":"Passsord",
+            "name":"mesNotes",
+            "salut":"salut"
+        },
+        "server":{
+            "port": 5000
+        }
+    }
+}

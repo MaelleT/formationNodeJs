@@ -1,0 +1,24 @@
+{
+  "name": "mission11",
+  "version": "1.0.0",
+  "description": "serveur web avec express",
+  "main": "serveur.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --reporter spec",
+    "start": "node serveur.js"
+  },
+  "keywords": [
+    "essai"
+  ],
+  "author": "delamare",
+  "license": "UNLICENCED",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "pug": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "express": "^4.15.3"
+  }
+}

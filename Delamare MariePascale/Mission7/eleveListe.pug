@@ -1,0 +1,16 @@
+doctype html
+html
+    body
+        ul
+            each val in values
+            li= val
+    else
+    li There are no values
+        if typeof(eleve) != "undefined"
+            label Eleve cree&nbsp
+            label= "Nom : " + eleve.nom + ' '
+            label= "Prenom : " + eleve.prenom + ' '
+            br
+            br
+            br
+        a(href='eleve') Eleve mise à jour
