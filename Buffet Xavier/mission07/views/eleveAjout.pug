@@ -1,0 +1,17 @@
+html
+    head
+        title saisie eleve
+    body
+
+        if typeof(eleve) != "undefined" 
+            label= eleve.nom
+            a(href="eleve") Encore
+        else
+            form(method='post')
+                label nom
+                INPUT(type='text' name='newName')
+                br
+                label prenom
+                INPUT(type='text' name='newFirstname')
+                br
+                INPUT(type='submit' value='valider')

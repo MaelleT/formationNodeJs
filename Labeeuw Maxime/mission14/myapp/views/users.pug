@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  label Liste des élèves de la base :
+  table
+    each val in Reponse
+      tr
+        th 
+          label= val.nom
+        th
+          label= val.prenom
+        th
+          label= val.valeur
+        th
+          label= val.libelle
+        br

@@ -1,4 +1,7 @@
 const Eleve=require("./Eleve.js");
+const Prof=require("./Prof.js");
+const Matiere=require("./Matiere.js");
+const Note=require("./Note.js");
 const express=require('express');
 const app=express();
 

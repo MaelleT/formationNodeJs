@@ -1,0 +1,11 @@
+html
+    head
+        title liste
+    body
+        mixin list(items)
+            ul
+                each item in items
+                    li= item.nom
+        +list(liste)
+        br
+        a(href='/') retour 
