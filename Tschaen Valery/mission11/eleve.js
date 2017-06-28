@@ -88,10 +88,10 @@ class Eleve {
 		this._notes.forEach(function(note) {
 			total+=note.getValeur();
 		});
-		if(this._notes.length != 0)
-			return total/this._notes.length;
-		else
+		if(this._notes.length== 0)
 			throw('pas de note');
+			
+		return total/this._notes.length;
 	};
 
 	toString(){
