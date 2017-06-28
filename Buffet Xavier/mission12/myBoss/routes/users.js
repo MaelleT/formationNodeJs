@@ -1,14 +1,17 @@
+process.env.NODE_CONFIG_DIR = __dirname + "./config";
+
 var express = require('express');
 var router = express.Router();
+
+const config = require('config');
 
 const mysql = require('mysql');
 
 const  connection = mysql.createConnection({
-  host     : '192.168.222.86',
-  port     : '3306',
-  user     : 'etudiant',
-  password : 'Password1',
-  database : 'NodeJS'
+  host     : config.notes.database.host,
+  user     : config.notes.database.user,
+  password : config.notes.database.password,
+  database : config.notes.database.dbName
 });
 
 
