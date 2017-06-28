@@ -1,0 +1,17 @@
+{
+  "name": "mission11",
+  "version": "0.1.0",
+  "description": "Premier projet npm",
+  "main": "server.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --reporter spec",
+    "start": "node server.js"
+  },
+  "author": "Moi-même",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  },
+  "devDependencies": {}
+}
