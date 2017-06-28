@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+    table 
+        each note in lesNotes
+          tr
+            td= note.Nom
+            td= note.Prenom
+            td= note.Libelle + " " + note.Valeur + "/20"

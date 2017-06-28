@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+const config = require('config'); 
 const mysql = require('mysql');
 
 
 const connection = mysql.createConnection({
-  host     : '192.168.222.86',
-  user     : 'etudiant',
-  password : 'Password1',
-  database : 'NodeJS'
+  host     : config.notes.database.host,
+  user     : config.notes.database.user,
+  password : config.notes.database.passwd,
+  database : config.notes.database.dbname
 });
 
 /* GET users listing. */

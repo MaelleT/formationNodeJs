@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    mixin form(action, ...items)
+        form(action=action method='post')
+            each item in items
+                label= item
+                input(type="text" name=item placeholder=item)
+                br
+            input(type="submit" value="Envoyer")
+            
+    +form('/users/add','Nom','Prenom')

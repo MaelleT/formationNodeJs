@@ -1,0 +1,13 @@
+{
+    "notes":{
+        "database" :{
+            "host":"test",
+            "user":"test",
+            "passwd":"test",
+            "dbname":"test"
+        },
+        "server":{
+            "port":"0"
+        } 
+    }
+}
